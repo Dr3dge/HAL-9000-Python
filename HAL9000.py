@@ -37,6 +37,7 @@ def validate(n): #this is the validate function
 
 def init():
     print("Loading... ")
+    is_search_hist()
     if not os.path.isfile("Name.txt"):
         with open('Name.txt','w') as f:
             f.write("")
@@ -274,7 +275,3 @@ restart() - Restarts the computer
 howareyou() - Asks you how you are
 websearch() - Searches google in a new tab for your query
 searchyoutube() - Searches youtube in a new tab for your query""")
-
-init()
-startwrite()
-is_search_hist()
