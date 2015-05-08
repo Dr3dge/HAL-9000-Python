@@ -9,8 +9,12 @@ from os.path import join
 
 hal9000searchhist = 'searchresults.txt'
 
-with open(hal9000searchhist, 'r') as f:
-        searchhist = f.read()
+if os.path.isfile(hal9000searchhist):
+        with open(hal9000searchhist, 'r') as f:
+                searchhist = f.read()
+else:
+        with open(hal9000searchhist, 'w') as f:
+                f.write('')
 
 def is_search_hist():
     if not os.path.isfile(hal9000searchhist):
