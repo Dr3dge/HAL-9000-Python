@@ -240,7 +240,9 @@ def find_file(): #WIP
     print("""CAUTION: THIS FUNCTION WIIL SEARCH EVERY FOLDER IN THE GIVEN PATH.
 THIS CAN TAKE A LONG TIME.
 FOR FASTER RESULTS, INPUT A MORE SPECIFIC PATH""")
-    lookfor = input("What are you searching for? Be sure to include a file type (e.g. .txt, .py, etc.) ")
+    lookfor = input("What are you searching for? Be sure to include a file type (e.g. .txt, .py, etc.) CASE SENSITIVE ")
+    lookfer = lookfor.lower()
+    looker = lookfor.upper()
     rt = input("What path would you like to search? ")
     if rt == 'C:\\':
         rot = join(rt, '\\Users\\')
@@ -249,15 +251,35 @@ FOR FASTER RESULTS, INPUT A MORE SPECIFIC PATH""")
     else:
         rot = rt
     print("Searching....", rot)
-    for root, dirs, files in os.walk(rot):
-        print("Searching...", root)
-        if lookfor in files:
-            print("Found: %s" % join(root, lookfor))
-            break
-            x = join(root, lookfor)
-            search_add(x)
-    if lookfor not in files:
-        print("File Not Found")
+    searchfile = open(hal9000searchhist, "r")
+    for line in searchfile:
+            if lookfor in line:
+                print("File Found: ",line)
+                break
+            elif lookfer in line:
+                print("File Found: ",line)
+                break
+            elif looker in line:
+                print("File Found: ", line)
+                break
+            else:
+                for root, dirs, files in os.walk(rot):
+                    print("Searching...",root)
+                    if lookfor in files:
+                        x = join(root, lookfor)
+                        search_write(x)
+                        break
+                    elif lookfer in files:
+                        x = join(root, lookfor)
+                        search_write(x)
+                        break
+                    elif looker in files:
+                        x = join(root, lookfor)
+                        search_write(x)
+                        break
+                    if not lookfor or lookfer or looker in root:
+                        print("File not found")
+    searchfile.close()
 
 def shutdown():
     subprocess.call(['shutdown', '/s'])
