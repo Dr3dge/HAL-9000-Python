@@ -23,16 +23,25 @@ import subprocess
 import webbrowser
 import urllib
 import types
+import random
+
+hal9000searchhist = 'searchresults.txt'
+
+namefile = 'Name.txt'
 
 def namename():
-    with open('Name.txt','r') as f:
-        global name
-        name = f.read()
+    if not os.path.isfile(namefile):
+        with open(namefile,'w') as f:
+            f.write('')
+    elif os.path.isfile(namefile):
+        with open(namefile,'r') as f:
+            global name
+            name = f.read()
 
 def changename():
-    with open('Name.txt','w') as f:
+    with open(namefile,'w') as f:
         neme = input("I must ask; What is your name? ")
-        with open('Name.txt','w') as f:
+        with open(namefile,'w') as f:
             f.write(neme)
 
 def findphrase(tofind,whatin):

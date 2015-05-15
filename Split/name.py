@@ -22,7 +22,7 @@ from config import *
 def validname():
     c = 0
     while c is 0:
-        with open('Name.txt','r') as f:
+        with open(namefile,'r') as f:
             nomdeplume = f.read()
         print("My records indicate you are: ",nomdeplume,".",sep="")
         correctname = input("Is this you? Yes or No. ")
@@ -35,9 +35,5 @@ def validname():
             print("Yes or no. Simple prompt. Really.")
             
 def nom():
-    if os.path.isfile("Name.txt"):
         namename()
         validname()
-    else:
-        print("ERROR. No file Name.txt")
-        print("Please Restart HAL-9000 for Python.")

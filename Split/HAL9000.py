@@ -1,4 +1,5 @@
-""" HAL-9000 for Python is a Software PA
+"""
+    HAL-9000 for Python is a Software PA
     Copyright (C) 2015  Rory Buchanan
 
     This program is free software: you can redistribute it and/or modify

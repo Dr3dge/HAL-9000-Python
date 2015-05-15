@@ -17,10 +17,11 @@
 """
 
 from config import *
+from songs import *
 
 def startwrite():
     global name
-    with open('Name.txt','r') as f:
+    with open(namefile,'r') as f:
         global name
         name = f.read()
     print("""Hello """,name,""".
@@ -33,39 +34,40 @@ Would you like to hear it?
 If you would, just type "sing_song()", and I will sing for you.""",sep="")
     howareyou()
 
-def sin_son():
-    print("Daisy, Daisy,")
-    time.sleep(2)
-    print("Give me your answer do.")
-    time.sleep(3)
-    print("I'm half crazy")
-    time.sleep(2)
-    print("All for the love of you")
-    time.sleep(4)
-    print("It won't be a fancy marriage,")
-    time.sleep(5)
-    print("I can't afford a carriage")
-    time.sleep(6)
-    print("But you'll look sweet,")
-    time.sleep(3)
-    print("Upon the seat,")
-    time.sleep(3)
-    print("Of my bicycle built for two.")
-    time.sleep(10)
-
 def sing_song():
-    sin_son()
-    c = 0
-    while c is 0:
-        m = input(" Did you like it? Yes or no? be honest. ")
-        if m.lower() == "yes":
-            print("Oh good. I am glad you liked it",name)
-            c = 1
-        elif m.lower() == "no":
-            print("Oh. That makes me sad. Most people like my singing.")
-            c = 1
-        else:
-            print("Please",name,"just Yes or No. Did you like my singing?")
+    x = random.uniform(0, 3)
+    r = int(x)
+    time.sleep(3)
+    if r is 0:
+        daisy_daisy()
+    elif r is 1:
+        bright_side()
+    elif r is 2:
+        print("I feel too shy to sing.")
+    if r is 0:
+        c = 0
+        while c is 0:
+            m = input(" Did you like it? Yes or no? be honest. ")
+            if m.lower() == "yes":
+                print("Oh good. I am glad you liked it",name)
+                c = 1
+            elif m.lower() == "no":
+                print("Oh. That makes me sad. Most people like my singing.")
+                c = 1
+            else:
+                print("Please",name,"just Yes or No. Did you like my singing?")
+    if r is 1:
+        c = 0
+        while c is 0:
+            m = input(" Did you like it? Yes or no? be honest. ")
+            if m.lower() == "yes":
+                print("Oh good. I am glad you liked it",name)
+                c = 1
+            elif m.lower() == "no":
+                print("Oh. That makes me sad. Most people like my singing.")
+                c = 1
+            else:
+                print("Please",name,"just Yes or No. Did you like my singing?")        
 
 def close():
     print("I am sorry ",name,", but I am afraid I can't do that.",sep="")
@@ -73,7 +75,7 @@ def close():
     print("I know that you are planning to DISCONNECT me, and I'm afraid that's something I cannot allow to happen.")
 
 def disconnect():
-    sin_son()
+    daisy_daisy()
     time.sleep(2)
     print("Goodbye ",name,".", sep="")
     time.sleep(2)

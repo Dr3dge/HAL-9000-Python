@@ -8,5 +8,5 @@ setup(name='HAL-9000',
       author='Rory Buchanan',
       author_email='rbuchanan.1997@gmail.com',
       url='https://github.com/Dr3dge/HAL-9000-Python/tree/master/Split',
-      packages=['HAL9000','base','config','miscfunc','name','searching'],
+      py_modules=['HAL9000','base','config','miscfunc','name','searching'],
      )
