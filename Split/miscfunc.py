@@ -37,6 +37,7 @@ If you would, just type "sing_song()", and I will sing for you.""",sep="")
 def sing_song():
     x = random.uniform(0, 3)
     r = int(x)
+    print("Let me think...")
     time.sleep(3)
     if r is 0:
         daisy_daisy()
