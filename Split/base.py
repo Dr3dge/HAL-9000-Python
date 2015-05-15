@@ -35,5 +35,5 @@ def init():
     start()
     nom()
     print("Initialisation Successful")
-    input("Press enter (↵) to continue...")
+    input("Press enter to continue...")
     startwrite()
