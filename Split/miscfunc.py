@@ -28,10 +28,7 @@ def startwrite():
 I am HAL-9000 running in Python.
 I was created by the Dr3dge initiative and written by Rozza15.
 I am here to help you complete your mission.
-If you need help, feel free to ask. Just type "help()".
-I can also sing you a song.
-Would you like to hear it?
-If you would, just type "sing_song()", and I will sing for you.""",sep="")
+If you need help, feel free to ask. Just type "help()".""",sep="")
     howareyou()
 
 def sing_song():
@@ -45,7 +42,7 @@ def sing_song():
         bright_side()
     elif r is 2:
         print("I feel too shy to sing.")
-    if r is 0:
+    if r != 2:
         c = 0
         while c is 0:
             m = input(" Did you like it? Yes or no? be honest. ")
@@ -56,19 +53,7 @@ def sing_song():
                 print("Oh. That makes me sad. Most people like my singing.")
                 c = 1
             else:
-                print("Please",name,"just Yes or No. Did you like my singing?")
-    if r is 1:
-        c = 0
-        while c is 0:
-            m = input(" Did you like it? Yes or no? be honest. ")
-            if m.lower() == "yes":
-                print("Oh good. I am glad you liked it",name)
-                c = 1
-            elif m.lower() == "no":
-                print("Oh. That makes me sad. Most people like my singing.")
-                c = 1
-            else:
-                print("Please",name,"just Yes or No. Did you like my singing?")        
+                print("Please",name,"just Yes or No. Did you like my singing?")      
 
 def close():
     print("I am sorry ",name,", but I am afraid I can't do that.",sep="")
@@ -106,17 +91,17 @@ def restart():
     subprocess.call(['shutdown', '/r'])
 
 def help():
-    print("""startwrite() - Begins the program proper
-sing_song() - HAL will sing you a song
-close() - Should close the session
-websearch() - Opens a new tab with your query
-shutdown() - Turns off the Computer
-logoff() - Logs off
-restart() - Restarts the computer
-howareyou() - Asks you how you are
-websearch() - Searches google in a new tab for your query
-searchyoutube() - Searches youtube in a new tab for your query
-find_file() - WIP find file function""")
+    print("""startwrite - Begins the program proper
+sing_song - HAL will sing you a song
+close - Should close the session
+websearch - Opens a new tab with your query
+shutdown - Turns off the Computer
+logoff - Logs off
+restart - Restarts the computer
+howareyou - Asks you how you are
+websearch - Searches google in a new tab for your query
+searchyoutube - Searches youtube in a new tab for your query
+find_file - WIP find file function""")
 
 def howareyou():
     print("How are you today ",name,"?",sep="")
