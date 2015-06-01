@@ -53,7 +53,7 @@ def sing_song():
                 print("Oh. That makes me sad. Most people like my singing.")
                 c = 1
             else:
-                print("Please",name,"just Yes or No. Did you like my singing?")      
+                print("Please",name,"just Yes or No. Did you like my singing?")
 
 def close():
     print("I am sorry ",name,", but I am afraid I can't do that.",sep="")
