@@ -23,21 +23,3 @@ from miscfunc import *
 from config import *
 
 init()
-def isfunc(n):
-    test_1 = 0
-    while test_1 is 0:
-        try: eval(n)()
-        except NameError:
-            return 0
-        else:
-            test_1 = 1
-            return 1
-c = 0
-while c is 0:
-    x = input("What Now? ")
-    if isfunc(x) is 1:
-        y = eval(x)()
-        y
-    else:
-        print("NOT A VALID FUNCTION!")
-

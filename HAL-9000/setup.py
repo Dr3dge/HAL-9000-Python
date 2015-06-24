@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='HAL-9000',
-    version='v1.0.1a1',
+    version='v1.0.1a2',
     packages=['base', 'name', 'songs', 'config', 'HAL9000', 'miscfunc', 'searching'],
     url='https://github.com/Dr3dge/HAL-9000-Python',
     license='GNU GPL v3.0',

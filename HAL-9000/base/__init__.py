@@ -37,3 +37,28 @@ def init():
     print("Initialisation Successful")
     input("Press enter to continue...")
     startwrite()
+    n = 0
+    while n is 0:
+        okgo()
+
+def isfunc(n):
+    test_1 = 0
+    while test_1 is 0:
+        try: eval(n)()
+        except NameError:
+            return 0
+        else:
+            test_1 = 1
+            return 1
+def okgo():
+    c = 0
+    while c is 0:
+        x = input("What Now? ")
+        if x == '':
+            print("NOT A VALID FUNCTION!")
+        elif isfunc(x) is 1:
+            y = eval(x)
+            y
+            c = 1
+        else:
+            print("NOT A VALID FUNCTION!")
