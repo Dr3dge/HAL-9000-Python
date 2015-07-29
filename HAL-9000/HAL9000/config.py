@@ -23,42 +23,36 @@ import subprocess
 import webbrowser
 import urllib
 import types
-from searching import *
-from name import *
-from miscfunc import *
+import random
 from os.path import join
-from config import *
+from urllib.parse import *
 
-def init():
-    print("Loading... ")
-    is_search_hist()
-    start()
-    nom()
-    print("Initialisation Successful")
-    input("Press enter to continue...")
-    startwrite()
-    n = 0
-    while n is 0:
-        okgo()
 
-def isfunc(n):
-    test_1 = 0
-    while test_1 is 0:
-        try: eval(n)()
-        except NameError:
-            return 0
-        else:
-            test_1 = 1
-            return 1
-def okgo():
-    c = 0
-    while c is 0:
-        x = input("What Now? ")
-        if x == '':
-            print("NOT A VALID FUNCTION!")
-        elif isfunc(x) is 1:
-            y = eval(x)
-            y
-            c = 1
-        else:
-            print("NOT A VALID FUNCTION!")
+hal9000searchhist = 'searchresults.txt'
+
+
+namefile = 'Name.txt'
+
+
+def namename():
+    if not os.path.isfile(namefile):
+        with open(namefile, 'w') as f:
+            f.write('')
+    elif os.path.isfile(namefile):
+        with open(namefile, 'r') as f:
+            global name
+            name = f.read()
+
+
+def changename():
+    with open(namefile, 'w') as f:
+        neme = input("I must ask; What is your name? ")
+        f.write(neme)
+
+
+def findphrase(tofind, whatin):
+    phrase_pat = re.compile(r'\b({0})\b'.format(tofind), flags=re.IGNORECASE).search
+    if phrase_pat(whatin):
+        return 1
+    else:
+        return 0

@@ -16,15 +16,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import os
+
 from config import *
-            
+
+
 def validname():
     c = 0
     while c is 0:
-        with open(namefile,'r') as f:
+        with open(namefile, 'r') as f:
             nomdeplume = f.read()
-        print("My records indicate you are: ",nomdeplume,".",sep="")
+        print("My records indicate you are: ", nomdeplume, ".", sep="")
         correctname = input("Is this you? Yes or No. ")
         if correctname.lower() == "yes":
             c = 1
@@ -33,7 +34,8 @@ def validname():
             changename()
         else:
             print("Yes or no. Simple prompt. Really.")
-            
+
+
 def nom():
         namename()
         validname()

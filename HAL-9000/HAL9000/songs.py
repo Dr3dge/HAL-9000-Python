@@ -1,10 +1,12 @@
+
+
 from config import *
 
+
 def bright_side():
-    with open(namefile,'r') as f:
-            global name
+    with open(namefile, 'r') as f:
             name = f.read()
-    print("Cheer up, ",name,"", sep='')
+    print("Cheer up, ", name, "", sep='')
     time.sleep(1)
     print("You know what they say...")
     time.sleep(2)
@@ -85,7 +87,7 @@ def bright_side():
     print("Always look on the right side of life")
     time.sleep(6)
     print()
-    print("C'mon ",name,", cheer up!",sep='')
+    print("C'mon ", name, ", cheer up!", sep='')
     time.sleep(2)
     print()
     print("Always look on the bright side of life")
@@ -124,6 +126,7 @@ def bright_side():
     time.sleep(2)
     print("I told them, I said to them, Bernie, I said they'll never make their money back...")
     time.sleep(3)
+
 
 def daisy_daisy():
     print("Daisy, Daisy,")
